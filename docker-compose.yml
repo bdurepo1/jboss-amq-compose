@@ -1,1 +1,12 @@
-#Docker compose file
+# Docker compose file
+# Management ports are exposed for administration.
+version: '3'
+services:
+        broker:
+                image: "bdurepo/jboss6.2-amq" 
+                ports:
+                        - "8181:8181"
+        service:
+                image: "bdurepo/jboss7-ra"
+                ports: 
+                        - "9990:9990"
